@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -141,3 +142,41 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+=======
+# --- Frontend (React) ---
+# Ignore the massive folder containing all the libraries
+node_modules/
+# Ignore the production build folder
+frontend/build/
+# Ignore debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Backend (Python) ---
+# Ignore Python's temporary "brain" files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Ignore Virtual Environments
+venv/
+env/
+.env
+
+# --- Local Databases/Storage ---
+# If your backend creates a local database file
+*.sqlite3
+*.db
+
+# --- System Files ---
+# Ignore Windows-specific thumbnail files
+Thumbs.db
+desktop.ini
+# Ignore Mac-specific files (in case you share with a Mac user)
+.DS_Store
+
+# --- IDE Settings ---
+# Ignore VS Code local settings
+.vscode/
+>>>>>>> 21e4a72 (Keep local gitignore)
