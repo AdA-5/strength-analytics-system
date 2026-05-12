@@ -6,7 +6,7 @@ import StatsCards from '../components/StatsCards';
 import ProgressChart from '../components/ProgressChart';
 import UnitConverter from '../components/UnitConverter';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';;
 
 function Dashboard() {
   const [stats, setStats] = useState({
