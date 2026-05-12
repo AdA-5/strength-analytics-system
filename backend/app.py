@@ -276,12 +276,15 @@ def convert_units():
 
 
 if __name__ == '__main__':
-    print("\n" + "="*50)
-    print("🚀 STRENGTH ANALYTICS API STARTING...")
-    print("="*50)
-    print(f"📊 Database: {DATA_FILE}")
-    print("🌐 API running at: http://localhost:5000")
-    print("📡 CORS enabled for React frontend")
-    print("="*50 + "\n")
+    # Get port from environment variable (for production) or use 5000 (for local)
+    import os
+    port = int(os.environ.get('PORT', 5000))
     
-    app.run(debug=True, port=5000)
+    # In production, don't use debug mode
+    is_production = os.environ.get('PRODUCTION', 'false').lower() == 'true'
+    
+    app.run(
+        host='0.0.0.0',  # Allow external connections
+        port=port,
+        debug=not is_production
+    )
